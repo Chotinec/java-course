@@ -1,5 +1,8 @@
 import java.lang.Math;
 
+/**
+        Класс реализующий операции сложения, вычитания, умножения, деления, возведения в степень
+*/
 public class Calculator{
        
         /**
@@ -32,7 +35,8 @@ public class Calculator{
 
         /**
                 Сумируем аргументы
-                @param params аргументы суммирования
+                @param param1 1-ое слогаемое
+                @param param2 2-ое слогаеиое
         */
         public void add(double param1, double param2){
               if (oldResult)
@@ -43,6 +47,8 @@ public class Calculator{
 
         /**
                 Вычитаем аргументы
+                @param param1 1-ое вычитаемое
+                @param param2 2-ое вычитаемое
         */
         public void subtract(double param1, double param2){
               if (oldResult)
@@ -53,6 +59,8 @@ public class Calculator{
 
         /**
                 Умножаем аргументы
+                @param param1 1-ое умножаемое
+                @param param2 2-ое умножаемое
         */
         public void multiplication(double param1, double param2){
               if (oldResult)
@@ -63,6 +71,8 @@ public class Calculator{
 
         /**
                 Деление аргументов
+                @param param1 1-ое делимое
+                @param param2 2-ое делимое
         */
         public void division(double param1, double param2){
               if (oldResult)
@@ -73,6 +83,8 @@ public class Calculator{
 
         /**
                 Извлечение корня
+                @param param1 число, которое нужно возвести в степень
+                @param param2 степень в которую нужно возвести
         */
         public void involution(double param1, double param2){
               if (oldResult){

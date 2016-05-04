@@ -7,6 +7,7 @@ public class InteractRunner{
         */
         public static void main(String[] arg){
                Scanner reader = new Scanner(System.in);
+               InteractRunner runner = new InteractRunner();
                 try{
                         Calculator calc  = new Calculator();
                         String exit = "no";
@@ -18,29 +19,8 @@ public class InteractRunner{
                                 String first = reader.next();
                                 System.out.println("Enter second arg : ");
                                 String second = reader.next();
-                                calc.setOldResult(oldResult);
-                                switch(Integer.valueOf(operation)){
-                                        case 1:
-                                           calc.add(Double.valueOf(first),Double.valueOf(second));
-                                           break;
-                                        case 2:
-                                           calc.subtract(Double.valueOf(first),Double.valueOf(second));
-                                           break;
-                                        case 3:
-                                           calc.multiplication(Double.valueOf(first),Double.valueOf(second)); 
-                                           break;
-                                        case 4:
-                                           calc.division(Double.valueOf(first),Double.valueOf(second)); 
-                                           break;
-                                        case 5:
-                                           calc.involution(Double.valueOf(first),Double.valueOf(second)); 
-                                           break;
-                                        default: 
-                                           System.out.println("Incorrect input, try again!");
-                                           continue;                 
-                                }
+                                runner.doCalculation(operation,calc,oldResult,first,second);
                                 System.out.println("Result is " + calc.getResult());
-                                //calc.cleanResult();
                                 System.out.println("Exit : yes/no");
                                 exit = reader.next();
                                  if (!exit.equals("yes")){
@@ -56,4 +36,35 @@ public class InteractRunner{
                         reader.close();
                 }
         }
+
+        /**
+                 Произвести вычисления
+        */
+        public void doCalculation(String operation, Calculator calc, boolean oldResult, String first, String second){
+                calc.setOldResult(oldResult);
+                switch(Integer.valueOf(operation)){
+                        case 1:
+                            calc.add(Double.valueOf(first),Double.valueOf(second));
+                            break;
+                        case 2:
+                            calc.subtract(Double.valueOf(first),Double.valueOf(second));
+                            break;
+                        case 3:
+                            calc.multiplication(Double.valueOf(first),Double.valueOf(second)); 
+                            break;
+                        case 4:
+                            calc.division(Double.valueOf(first),Double.valueOf(second)); 
+                            break;
+                        case 5:
+                            calc.involution(Double.valueOf(first),Double.valueOf(second)); 
+                            break;
+                        default: 
+                            System.out.println("Incorrect input, try again!");              
+                }
+        }        
+        
+
+
+
+
 }
